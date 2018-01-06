@@ -15,6 +15,10 @@
     clear: both;
 }
 
+a:visited{
+    color: #000;
+}
+
 body {
     background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(../img/back.jpg);
     background-size: cover;
@@ -57,14 +61,7 @@ body {
 **********************************************/
 
 .player-name {
-/*    font-size: 23px;
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 100;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    position: relative;*/
 }
 
 .player-name-text {
@@ -76,6 +73,15 @@ body {
     margin-top: 20px;
     margin-bottom: 10px;
     position: relative;
+}
+
+.active .player-name-text::after {
+    content: "\2022";
+    font-size: 40px;
+    position: absolute;
+    color: #EB4D4D;
+    top: -10px;
+    right: -30px;
 }
 
 .player-score {
@@ -92,15 +98,6 @@ body {
 
 .active .player-name-text { 
     font-weight: 300; 
-}
-
-.active .player-name-text::after {
-    content: "\2022";
-    font-size: 40px;
-    position: absolute;
-    color: #EB4D4D;
-    top: 6px;
-    right: -10px;
 }
 
 .player-current-box {
@@ -135,21 +132,13 @@ button {
     transition: background-color 0.3s, color 0.3s;
 }
 
-button:hover { 
-    font-weight: 600; 
-}
-
-button:hover i { 
-    margin-right: 20px; 
-}
-
 button:focus {
     outline: none;
 }
 
 .btn-new { 
-    top: 14px;
-    left: 0px;
+    top: 16px;
+    left: 12px;
     font-size: 16px;
 }
 
@@ -172,14 +161,14 @@ i {
     font-size: 32px;
     line-height: 1;
     vertical-align: text-top;
-    margin-top: -4px;
+    margin-top: -7px;
     transition: margin 0.3s;
 }
 
 .dice {
     position: absolute;
+    top: calc(50vh - 80px);
     left: 41%;
-    top: 80px;
     height: 80px;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
     transition: transform 1s ease-in-out;
@@ -187,7 +176,7 @@ i {
 
 
 .dice-2 {
-    top: 134px;
+    top: calc(50vh - 40px);
     left: 52%;
 }
 
@@ -225,9 +214,9 @@ i {
 
 
 .shake {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  backface-visibility: hidden;
-  perspective: 1000px;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 @keyframes shake {
@@ -273,18 +262,31 @@ i {
 
 .help-rules {
     position: absolute;
-    width: 600px;
-    background: #fff;
-    left: calc(50% - 300px);
-    top: 40px;
-    padding: 30px;
-    line-height: 1.8;
-    border: 1px solid #000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.82);
     display: none;
 }
 
+.help-rules-wrapper{
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    line-height: 1.8;
+    border: 1px solid #000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 .help-rules-close{
-    margin-top: 25px;
+    margin-top: 8px;
     display: block;
     text-align: center;
     text-transform: uppercase;
@@ -292,20 +294,42 @@ i {
     font-size: 20px;
 }
 
-
 /* Tablet */
 
 @media screen and (min-width: 768px){
 
     .btn-new {
         top: 20px;
-        left: 5px;
+        left: 15px;
         font-size: 21px;
     }
-    .player-name {
+
+    .player-name-text {
         font-size: 33px;
     }
 
-
+    .dice {
+        height: 100px;
+    }
+    .btn-roll{
+        bottom: 130px;
+    }
+    .btn-roll, .btn-hold{
+        font-size: 26px;
+    }
+    .help-rules-wrapper {
+        font-size: 16px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        width: 600px;
+        top: 50vh;
+        transform: translateY(-50%);
+    }
+    i {
+        margin-top: -3px;
+    }
 }
-
