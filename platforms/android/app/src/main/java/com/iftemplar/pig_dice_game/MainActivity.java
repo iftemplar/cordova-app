@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.example.hello;
+package com.iftemplar.pig_dice_game;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

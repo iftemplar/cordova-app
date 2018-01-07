@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.example.hello" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.iftemplar.pig-dice-game" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Pig Dice Game</name>
     <description>
         Super simple dice game for 2 players (split screen)
@@ -24,6 +24,6 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <preference name="orientation" value="landscape" />
-    <icon src="www/img/logo.png" />
+    <icon src="www/img/logo-2.png" />
     <engine name="android" spec="^7.0.0" />
 </widget>
