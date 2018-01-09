@@ -1,0 +1,4 @@
+#Sun Jan 07 22:48:01 EET 2018
+base.0=/Users/mykolasamila/front-end/hello/platforms/android/app/build/intermediates/transforms/dex/release/0
+renamed.0=classes.dex
+file.0=/Users/mykolasamila/front-end/hello/platforms/android/app/build/intermediates/transforms/dex/release/0/classes.dex
