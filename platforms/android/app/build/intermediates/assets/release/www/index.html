@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111498785-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-111498785-1');
+        </script>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="css/ionicons.min.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Pig Game</title>
+    </head> 
+    <body>
+        <div class="wrapper clearfix">
+            <div class="player-0-panel active">
+                <div class="player-name">
+                    <span class="player-name-text" id="name-0">Player 1</span>
+                </div>
+                <div class="player-score" id="score-0">99</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-0">0</div>
+                </div>
+            </div>
+            
+            <div class="player-1-panel">
+                <div class="player-name">
+                    <span class="player-name-text" id="name-1">Player 2</span>
+                </div>
+                <div class="player-score" id="score-1">99</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-1">0</div>
+                </div>
+            </div>
+            
+            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
+            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
+            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+
+            <img src="img/dice-1.png" alt="Dice" class="dice">
+            <img src="img/dice-1.png" alt="Dice" class="dice dice-2">
+
+            <div class="input-wrapper">
+                <span class="input-wrapper-desc">Score to collect:</span>
+                <input type="text" class="score-input" id="finalScoreInput" value="100">
+            </div>
+            <a href="#" class="help"><i class="ion-help-circled"></i></a>
+        </div>
+
+        <div class="help-rules">
+            <div class="help-rules-wrapper">
+                <h3>Rules</h3>
+                <p>Each player rolls dice (ROLL DICE button) collecting points for each try until the player gets 1 on any dice or decides to stash his current score (HOLD button)</p>
+                <p>If the player gets 1 he loses all the points he collected in the current round. If the player decides to stash his round's score, these points are added to his overral score.</p>
+                <p>Then the other player's turn</p>
+                <p>If a player gets 6 on any dice twice in a row, the player loses all the points from his current and overall scores.</p>
+                <p>The player who got 100 (or more) points wins the game.</p>
+                <p>To start a new game tap NEW GAME. If you want to change the score to collect, you can do it by changing the Score to collect value in the left bottom corner. You can do it only when starting new game, before first turn.</p>
+                <a href="" class="help-rules-close"><i class="ion-close-round"></i>Close</a>
+            </div>
+
+
+
+
+        </div>
+
+<!--         <div class="help-rules">
+            <h3>Правила</h3>
+            <p>Кожен гравець кидає кубики (кнопка ROLL DICE) набираючи очки за кожен хід допоки на одному з кубиків не випаде 1 або гравець вирішить зупинитись (кнопка HOLD)</p>
+            <p>Якщо випала одиничка, гравець не отримує нічого за цей раунд. Якщо гравець вирішив зупинитись до того як викинув 1, всі очки зароблені за раунд додаються до його загального рахунку.</p>
+            <p>Далі хід переходить до іншого гравця.</p>
+            <p>Якщо у гравця двічі поспіль випадає 6 на одному з кубиків він втрачає всі збережені очки і всі очки раунду.</p>
+            <p>Перемагає той, хто першим назбирає 100 очок.</p>
+            <p>Щоб почати нову гру, натисніть NEW GAME</p>
+
+            <a href="" class="help-rules-close"><i class="ion-close-round"></i>Close</a>
+        </div> -->
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
+</html>
